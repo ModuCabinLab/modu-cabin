@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="ko"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="theme-color" content="#f1f4f1"><title>모두의 캐빈 · 시연 샘플</title><link rel="stylesheet" href="styles.css"></head>
+<body><div class="app-shell">
+<header class="topbar">
+  <a class="brand" href="#main" aria-label="모두의 캐빈 홈"><svg viewBox="0 0 32 32" aria-hidden="true"><path d="M5 24V12a5 5 0 0 1 10 0v12M17 24V8a5 5 0 0 1 10 0v16M3 25h26"/></svg><span>모두의 캐빈<small>MODU CABIN</small></span></a>
+  <span class="brand-description">함께 타는 사람을 위한 작은 배려</span>
+  <div class="top-status"><span class="demo-badge">시연용 시뮬레이션</span><span class="park" id="driving-state">● 정차 중</span></div>
+</header>
+<section class="intro"><div><p class="eyebrow" id="trip-label">OUR SPACE · 01</p><h1>우리 모두에게 편안한 캐빈.</h1><p id="welcome-detail">좌석을 연결하고, 함께 편안한 설정을 골라 보세요.</p></div><div class="trip-summary"><span id="people-count">0<span>명 탑승</span></span><span class="capacity-summary" id="capacity-summary">4인승 캐빈</span></div></section>
+<main id="main">
+<section class="vehicle-card" aria-labelledby="vehicle-title">
+  <div class="card-heading"><div><p class="eyebrow">YOUR CABIN</p><h2 id="vehicle-title">탑승 공간</h2></div><span id="layout-description">2열 · 2 + 2 배치</span></div>
+  <div class="model-picker"><label for="vehicle-select">차종 선택</label><select id="vehicle-select"><option value="ioniq5">아이오닉 5</option><option value="ioniq9" selected>아이오닉 9</option><option value="palisade">팰리세이드</option><option value="generic">일반 캐빈 · 자유 배치</option></select><span id="vehicle-model-year">2027 · 국내 모델</span></div>
+  <div class="layout-row"><span>좌석 구성</span><div id="capacity-options" role="group" aria-label="차량 좌석 구성"><button data-capacity="4" aria-pressed="true">4인</button><button data-capacity="5" aria-pressed="false">5인</button><button data-capacity="6" aria-pressed="false">6인</button><button data-capacity="7" aria-pressed="false">7인</button><button data-capacity="8" aria-pressed="false">8인</button></div></div>
+  <p class="layout-note" id="layout-note">차종·정원을 바꾸면 새 탑승으로 시작해요. 좌석은 실제 구성, 제어는 시뮬레이션입니다.</p>
+  <div class="cabin-stage"><div class="car-canvas"><span class="car-direction">차량 앞쪽 ↑</span>
+    <svg class="vehicle-svg" viewBox="0 0 460 680" role="group" aria-label="차량을 위에서 본 좌석 지도">
+      <defs><linearGradient id="car-paint" x1="0" x2="1"><stop stop-color="#b2bebc"/><stop offset=".16" stop-color="#eef2ef"/><stop offset=".52" stop-color="#fafcf9"/><stop offset=".84" stop-color="#d3ddda"/><stop offset="1" stop-color="#a4b4af"/></linearGradient><linearGradient id="glass" x1="0" x2="0" y2="1"><stop stop-color="#4c6868"/><stop offset="1" stop-color="#8fa6a0"/></linearGradient><linearGradient id="seat-cushion" x1="0" x2="0" y2="1"><stop stop-color="#e7ede8"/><stop offset="1" stop-color="#cbd7ce"/></linearGradient><filter id="car-shadow" x="-30%" y="-10%" width="160%" height="125%"><feDropShadow dx="0" dy="10" stdDeviation="10" flood-color="#294e43" flood-opacity=".16"/></filter></defs>
+      <g id="vehicle-body" filter="url(#car-shadow)">
+        <g fill="#344641"><rect x="65" y="133" width="27" height="104" rx="12"/><rect x="368" y="133" width="27" height="104" rx="12"/><rect x="65" y="465" width="27" height="104" rx="12"/><rect x="368" y="465" width="27" height="104" rx="12"/></g>
+        <path d="M230 24C137 24 97 54 87 123L80 223v327c0 70 41 103 150 103s150-33 150-103V223l-7-100C363 54 323 24 230 24Z" fill="url(#car-paint)" stroke="#9cafa6" stroke-width="2"/>
+        <path d="M122 76Q230 41 338 76L350 137Q230 115 110 137Z" fill="#e4ebe5" stroke="#b9c8bf"/><path d="M139 80L133 121M321 80l6 41" stroke="#c7d2cb" stroke-width="2"/>
+        <path d="M101 72l43-17 7 15-45 14ZM359 72l-43-17-7 15 45 14Z" fill="#fffbed" stroke="#c5cfc5"/>
+        <path d="M108 158Q230 125 352 158L341 218Q230 198 119 218Z" fill="url(#glass)" stroke="#516d65" stroke-width="3"/><path d="M129 164l-4 36M330 153l-7 43" stroke="#e3f0e6" opacity=".4" stroke-width="5"/><path d="M136 210l65-11M324 210l-65-11" stroke="#3f5750" stroke-width="3"/>
+        <path d="M82 219l-31 7q-13 21 2 26l29-3M378 219l31 7q13 21-2 26l-29-3" fill="#b9c9bf" stroke="#8da599" stroke-width="2"/>
+        <rect x="108" y="229" width="244" height="348" rx="32" fill="#536c62"/><rect x="115" y="236" width="230" height="334" rx="26" fill="#eff3ed"/>
+        <g fill="none" stroke="#a0b4a8" stroke-width="2"><path d="M97 259v138h-9M363 259v138h9M97 410v132M363 410v132"/><path d="M87 301v27M373 301v27M87 449v27M373 449v27" stroke-width="5" stroke-linecap="round"/></g>
+        <path d="M117 588h226l-14 30q-99 22-198 0Z" fill="url(#glass)" stroke="#6a8377" stroke-width="2"/>
+        <path d="M94 583l10 30 22 11-7-31ZM366 583l-10 30-22 11 7-31Z" fill="#cc8478"/>
+        <path d="M151 640q79 13 158 0" fill="none" stroke="#9eafa4" stroke-width="3"/>
+      </g>
+      <g id="seat-grid"></g>
+      <g id="steering-wheel" transform="translate(166 231)" fill="none" stroke="#405e52" stroke-width="4"><circle r="13"/><path d="M-12 0h24M0 0v12"/></g>
+    </svg>
+  </div><aside class="vehicle-overview" aria-label="차량 및 탑승자"><figure id="vehicle-photo-card"><img id="vehicle-photo" src="ioniq9.jpg" alt="현대 아이오닉 9 공식 외관 사진"><figcaption><strong id="vehicle-model-name">아이오닉 9</strong><span id="vehicle-photo-caption">공식 외관 참고</span></figcaption></figure><div class="occupant-rail" aria-label="연결된 탑승자"><div class="rail-title">탑승자 <span id="roster-count">0</span></div><div id="occupant-list"></div><div class="seat-legend"><span><i></i>연결됨</span><span><i class="empty-dot"></i>빈 좌석</span></div><p class="rail-tip">좌석을 선택하면<br>상세 정보를 볼 수 있어요.</p></div></aside></div>
+  <div id="seat-detail" class="seat-detail" aria-live="polite"></div>
+  <div class="trip-controls"><button class="primary" id="connect">가족 3명 연결 <span>↗</span></button><button class="secondary" id="fill-all">전 좌석 샘플</button><button class="quiet" id="next-trip">새 탑승 ↻</button></div>
+</section>
+<aside class="comfort-card" aria-label="맞춤 설정"><div class="card-heading"><div><p class="eyebrow">SHARED COMFORT</p><h2>함께 편안한 설정</h2></div><span class="comfort-symbol" aria-hidden="true">✳</span></div>
+  <div class="current-row"><div><span>공용 풍량</span><strong id="fan-value">3 <small>단계</small></strong></div><div class="fan-bars" id="fan-bars" aria-hidden="true"></div><div class="state-label" id="result-label">가상 차량 현재값</div></div>
+  <section aria-labelledby="suggestion-title"><div class="section-line"><h3 id="suggestion-title">취향을 모은 제안</h3><span id="suggestion-count">연결 대기</span></div><div id="suggestions"></div></section>
+  <section class="request-section"><div class="section-line"><h3>이번 탑승의 요청</h3><span>저장 선호 유지</span></div><div class="request-buttons"><button id="sleep" aria-pressed="false" disabled><span class="request-icon">☾</span><span>아이 잠듦<small>보호자가 직접 선택</small></span><span class="toggle" aria-hidden="true"></span></button><button id="heat-off" aria-pressed="false" disabled><span class="request-icon">≋</span><span>B 열선 끄기<small>이번 탑승만</small></span><span class="request-check" aria-hidden="true">+</span></button></div></section>
+  <div class="move-row"><label for="move-target">B의 자리 이동</label><div><select id="move-target" disabled></select><button id="move" disabled>이동 →</button></div></div>
+  <p id="feedback" class="feedback" role="status" aria-live="polite"></p>
+</aside></main>
+<footer><span><i></i> 실제 차량과 연결되지 않은 시연입니다. 차량명·사진은 외형과 좌석 구성의 참고 자료입니다.</span><div><button id="test-toggle" aria-expanded="false" aria-controls="test-panel">테스트 옵션</button><span class="version">PROTOTYPE 0.2</span></div></footer>
+<section id="test-panel" hidden aria-label="시연 테스트 옵션"><label>가상 차량 응답 <select id="gateway-mode"><option value="normal">정상</option><option value="fail">명령 실패</option><option value="unreadable">현재값 읽기 실패</option><option value="mismatch">요청값과 불일치</option></select></label><label><input id="driving" type="checkbox">주행 중</label><label><input id="conflict" type="checkbox">취향 충돌</label><button id="manual">수동 풍량 3단계</button><button id="reset">전체 초기화</button></section>
+</div><script src="cabin-core.js"></script><script src="app.js"></script></body></html>

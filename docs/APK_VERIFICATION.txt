@@ -1,0 +1,50 @@
+Modu Cabin simulation prototype — static APK verification
+Package, minimum/target SDK, launcher and simulation label verified.
+No requested Android permissions.
+Non-debuggable APK and non-debug signing certificate verified.
+Seven bundled web assets match source byte-for-byte.
+assets/app.js SHA256 3a1f61619e08a8bb331dc5b49072d31d883faad6bdfe64814d207f21d7230393
+assets/cabin-core.js SHA256 ee057330efb3afe1ecc34ed966486cd4b4c31ae1c14ca1d9c9e1c7c75bd13145
+assets/index.html SHA256 33bd4c990bfe9a3d11005be33b9b131c4e9868d0e7c6237c14c65da3a1bdf982
+assets/ioniq5.jpg SHA256 66f65aa806cf222e4a08caf1deb2008e0fbbbf706fa663683513d7d1c0d44d45
+assets/ioniq9.jpg SHA256 105bf54155167a96e36459196b32ad5125153003d0b8e886cdaf0ad4ee865433
+assets/palisade.jpg SHA256 ace67f32de86f55d174e04502a0284f010e83b6e8ebc3d4e7f5862b669354f44
+assets/styles.css SHA256 7b27e417de8b521cef288da755f9f7913acb48eab824322c1131e1e7e3d02b93
+APK SHA256 538a722f5739f80b2536ec3981ebecfb063529749947d0758b28f81832dd2696
+
+package: name='io.moducabin.demo' versionCode='4' versionName='0.3.0-submission' platformBuildVersionName='14' platformBuildVersionCode='34' compileSdkVersion='34' compileSdkVersionCodename='14'
+sdkVersion:'28'
+targetSdkVersion:'34'
+application-label:'모두의 캐빈 · 시뮬레이션'
+application-icon-160:'res/nL.xml'
+application: label='모두의 캐빈 · 시뮬레이션' icon='res/nL.xml'
+launchable-activity: name='io.moducabin.demo.MainActivity'  label='' icon=''
+feature-group: label=''
+  uses-feature-not-required: name='android.hardware.touchscreen'
+  uses-feature: name='android.hardware.screen.landscape'
+  uses-implied-feature: name='android.hardware.screen.landscape' reason='one or more activities have specified a landscape orientation'
+main
+supports-screens: 'small' 'normal' 'large' 'xlarge'
+supports-any-density: 'true'
+locales: '--_--'
+densities: '160'
+
+Verifies
+Verified using v1 scheme (JAR signing): false
+Verified using v2 scheme (APK Signature Scheme v2): false
+Verified using v3 scheme (APK Signature Scheme v3): true
+Verified using v3.1 scheme (APK Signature Scheme v3.1): false
+Verified using v4 scheme (APK Signature Scheme v4): false
+Verified for SourceStamp: false
+Number of signers: 1
+Signer #1 certificate DN: CN=Modu Cabin Submission, O=Modu Cabin Prototype, C=KR
+Signer #1 certificate SHA-256 digest: cbe6830fbf8b62eee5d120c22d2714c66f9a37e23dab0931cc431f66f2e0f266
+Signer #1 certificate SHA-1 digest: afe044d0034675bf9616dcfc866fc6d0f8364cb2
+Signer #1 certificate MD5 digest: e6e2e8fa2bbb56e408a078c1d45ee1dc
+Signer #1 key algorithm: RSA
+Signer #1 key size (bits): 3072
+Signer #1 public key SHA-256 digest: 6802966d88d2fa34edb82ee4003db898a99aec797daf33fff293bae13830252b
+Signer #1 public key SHA-1 digest: 30871834f7cc722baf12f94e8693a2e85361a7fe
+Signer #1 public key MD5 digest: 085ad87782c035862e1c1c4152b0d1eb
+
+This report does not establish emulator/device launch or Pleos SDK integration.

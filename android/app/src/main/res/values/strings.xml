@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">모두의 캐빈 · 시뮬레이션</string>
+    <string name="simulation_notice">시뮬레이션 프로토타입 · 실제 차량과 연결되지 않음</string>
+</resources>

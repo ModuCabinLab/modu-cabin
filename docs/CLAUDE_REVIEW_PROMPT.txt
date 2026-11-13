@@ -1,0 +1,62 @@
+당신은 자동차 앱의 코드·UX·공모전 출품물을 검토하는 독립 리뷰어입니다.
+아래 “모두의 캐빈” v0.3.0-submission를 실제 파일과 실행 화면 기준으로 검토해 주세요. README 설명을 사실로 가정하지 말고 구현과 대조하세요.
+
+이 버전은 앞선 Claude 패치의 빈 좌석 열선 해제, 성공/불일치 결과 분리, 지원 범위 조회, 제안 이유와 가독성 보정을 반영한 후속 검토 대상입니다. 자리 이동만으로 열선이 꺼지는 것은 아니며 사용자가 다음 제안을 적용한 후 읽기값으로 확인합니다. 실제 SDK의 capability 조회는 아직 구현하지 않았습니다.
+
+[프로젝트와 링크]
+- 저장소: https://github.com/ModuCabinLab/modu-cabin
+- 실행 데모: https://moducabinlab.github.io/modu-cabin/
+- 검토할 고정 버전: https://github.com/ModuCabinLab/modu-cabin/tree/v0.3.0-submission
+- 시연 영상·세로 숏폼·APK·소스 ZIP·SHA256:
+  https://github.com/ModuCabinLab/modu-cabin/releases/tag/v0.3.0-submission
+- 규칙 엔진: https://github.com/ModuCabinLab/modu-cabin/blob/v0.3.0-submission/web/cabin-core.js
+- UI 동작: https://github.com/ModuCabinLab/modu-cabin/blob/v0.3.0-submission/web/app.js
+- 화면/스타일:
+  https://github.com/ModuCabinLab/modu-cabin/blob/v0.3.0-submission/web/index.html
+  https://github.com/ModuCabinLab/modu-cabin/blob/v0.3.0-submission/web/styles.css
+- 테스트: https://github.com/ModuCabinLab/modu-cabin/tree/v0.3.0-submission/tests
+- 브라우저 검증: https://github.com/ModuCabinLab/modu-cabin/blob/v0.3.0-submission/tools/browser-check.cjs
+- Android 코드: https://github.com/ModuCabinLab/modu-cabin/tree/v0.3.0-submission/android/app/src
+- 검증 기록: https://github.com/ModuCabinLab/modu-cabin/blob/v0.3.0-submission/docs/VALIDATION.md
+- SDK 후속 작업: https://github.com/ModuCabinLab/modu-cabin/blob/v0.3.0-submission/android/PLEOS_NEXT_STEPS.md
+
+[의도와 현재 범위]
+서로 다른 탑승자의 선호를 좌석에 연결하고 공용 풍량을 모두의 허용 범위 안에서 제안합니다.
+사용자가 선택해야 적용하며 쓰기 응답 뒤 현재값을 다시 읽어 일치 여부를 표시합니다.
+2027 국내 모델 선택: 아이오닉 5는 5인(2+3), 아이오닉 9는 6인(2+2+2)/7인(2+3+2), 팰리세이드는 7인(2+2+3)/9인(3+3+3)입니다.
+별도 일반 캐빈에서만 4~8인 자유 배치를 제공합니다.
+공식 외관 사진과 모델별 특징을 참고한 SVG를 함께 표시합니다. SVG는 정밀 CAD가 아닙니다.
+모델·이미지 출처: https://github.com/ModuCabinLab/modu-cabin/blob/v0.3.0-submission/docs/VEHICLE_REFERENCES.md
+좌석별 온도 및 앞좌석 열선만 허용하는 시뮬레이션 규칙을 실제 차종의 기능 사양으로 오해시키지 않는지도 확인하세요.
+가족 3명 또는 전 좌석의 가상 프로필 A~I를 연결할 수 있습니다.
+배치 변경은 새 탑승을 시작합니다. B의 자리를 빈 좌석으로 옮기면 선호와 이번 탑승의 요청도 따라갑니다.
+수면은 보호자가 직접 선택하고 열선 끄기는 저장 선호와 분리된 일시 요청입니다.
+현재는 규칙 기반 시뮬레이션입니다. 실제 Pleos SDK·차량 제어·음성 인식·학습 AI·지속 저장은 미구현입니다.
+APK는 동일한 로컬 웹 파일을 담은 비디버그 release WebView 앱입니다. 별도 프로젝트명 인증서로 서명했고 AOSP Android 14/API 34 x86_64 에뮬레이터(1600×1000px, 160dpi)에서 실제 설치·실행·UI 조작을 검증했습니다. Pleos 에뮬레이터·SDK·실차는 미검증입니다. apk/ModuCabin_ModuCabin_release.apk, docs/APK_VERIFICATION.txt, docs/ANDROID_RUNTIME.md의 결과와 실제 파일을 대조해 주세요.
+대표 영상 modu-cabin-demo.mp4는 별도로 제공받은 117.81초 편집 영상으로, AI 연출 표시와 실행 화면, 음성 트랙을 포함합니다. modu-cabin-browser-demo.mp4와 modu-cabin-shortform.mp4는 최신 브라우저를 직접 조작한 무음 자막 녹화입니다. 각 파일의 표현과 실제 소스가 일치하는지 구분해서 검토해 주세요.
+
+[집중 검토]
+1. 좌석 구성별 표시·모든 탑승자의 제안 참여·같은 7인승의 차종별 배치 차이·정원 축소 초기화·없는/점유된 좌석으로 이동 차단·3열 열선 미지원 처리.
+2. 공용 풍량 교집합, 충돌 시 적용 차단, 프로필/좌석/일시 요청의 분리, 다음 탑승의 초기화 범위.
+3. 주행 잠금, 적용 중 중복 조작, 오래된 비동기 결과, 수동 조작 우선, 실패/읽기 불가/불일치의 표시. 요청값을 확인된 현재값처럼 표시하는지 확인.
+4. 밝은 새 화면의 정보 우선순위, 차량 형태의 인지성, 차종별 좌석 및 9인승 터치 영역, 키보드 접근성, 좁은 화면, 글자 크기와 대비. 우선 시연 UX 관점에서 평가하고 실제 차량 HMI 인증을 받은 것으로 보지 말 것.
+5. Android WebView의 로컬 파일 허용 목록, 외부 이동, 권한, JavaScript bridge, SDK 통합에서 남은 검증.
+6. 영상·README·APK·공개 소스가 같은 기능을 보여주는지, 실제 차량 연동이나 학습 AI로 오해하게 하는 표현이 있는지.
+
+[공모전 참고 자료]
+공식 자료의 최신 내용을 직접 확인해 1차 제출용 프로토타입과 후속 PT/에뮬레이터 요구를 구분해 주세요.
+- https://appdevchallenge.auto-hmg.io/guide/submission
+- https://appdevchallenge.auto-hmg.io/notice/c0a1a000-2026-4923-8000-000000000008
+- https://appdevchallenge.auto-hmg.io/notice/c0a1a000-2026-4923-8000-000000000007
+- https://document.pleos.ai/en/docs/pleos-only/getting-started
+- https://document.pleos.ai/docs/pleos-only/connect-sdk-pleos/Vehicle/check-capability
+- 참고 설명 영상: https://www.youtube.com/watch?v=na6tSJ44pWc
+신청서·동의서 작성과 제출은 사용자가 직접 진행합니다. 문서 작성·서명·제출을 대신하지 마세요.
+
+[원하는 답변 형식]
+A. 먼저 직접 확인한 파일/실행/영상과 접근하지 못한 자료를 명시해 주세요.
+B. P0(출품/동작을 막음), P1(주요 오동작), P2(개선)별 표: 문제, 파일:줄, 재현 단계, 영향, 최소 수정안, 회귀 검증.
+C. 사실과 다른 표현 또는 근거 부족한 주장만 별도로 표시해 주세요.
+D. 제출 전에 처리할 상위 3가지와 제출 후 SDK 통합 과제를 나눠 주세요.
+E. 화면 개선은 현재 기능을 보존하는 구체적 제안으로 주세요. 근거 없는 칭찬, 실행하지 않은 테스트의 통과 주장, 막연한 전체 재작성은 피하세요.
+코드 수정이 필요해도 우선 검토 결과와 최소 패치를 제안하고, 실제로 검증한 사실과 추정을 구분해 주세요.

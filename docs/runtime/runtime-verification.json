@@ -1,0 +1,165 @@
+{
+  "verified_at_utc": "2026-11-13T12:55:41.327515+00:00",
+  "package": "io.moducabin.demo",
+  "version_code": 4,
+  "version_name": "0.3.0-submission",
+  "apk_filename": "ModuCabin_ModuCabin_release.apk",
+  "apk_bytes": 2442835,
+  "apk_sha256": "538a722f5739f80b2536ec3981ebecfb063529749947d0758b28f81832dd2696",
+  "installed_apk_sha256": "538a722f5739f80b2536ec3981ebecfb063529749947d0758b28f81832dd2696",
+  "installed_bytes_match_submission": true,
+  "debuggable": false,
+  "environment": {
+    "kind": "Generic AOSP Android emulator, not Pleos Connect Emulator",
+    "android_release": "14",
+    "api_level": 34,
+    "abi": "x86_64",
+    "emulator_version": "37.2.13.0",
+    "system_image": "system-images;android-34;default;x86_64, revision 2",
+    "display": "1600x1000, 160 dpi, landscape",
+    "acceleration": "Existing Windows WHPX; SwiftShader rendering",
+    "webview_package": "com.android.webview",
+    "webview_version": "113.0.5672.136",
+    "interaction": "ADB touch/swipe/key events with fresh UIAutomator XML and Android screencap; no JavaScript injection"
+  },
+  "runtime_checks_passed": 13,
+  "runtime_checks_failed": 0,
+  "checks": [
+    {
+      "id": "initial_launch",
+      "passed": true,
+      "screenshot": "01-launch-ready.png",
+      "screenshot_sha256": "8c7f02de9b7cac98ba8dcb1862299dbcc8ac7c11fa26e8647f62f04d1b216997",
+      "hierarchy": "01-launch-ready.xml",
+      "hierarchy_sha256": "88075e8bda56915ee7d710bf3748812272d45f0d94c7ecde1c7e09cd08fbceb6"
+    },
+    {
+      "id": "family_connection",
+      "passed": true,
+      "screenshot": "03-family-connected.png",
+      "screenshot_sha256": "9eb61b41e9533ae068d75bbf243c4feb2aaa8d126bc708215aa4502f5bda6cf1",
+      "hierarchy": "03-family-connected.xml",
+      "hierarchy_sha256": "76494a8d47d22333ae7488d17bf3de6e3584c68df4554b0b121926fcd3770037"
+    },
+    {
+      "id": "apply_and_readback",
+      "passed": true,
+      "screenshot": "04-applied.png",
+      "screenshot_sha256": "836c0a51ab20b2165e25d4f1a805ac70554dbad8801944312acb754cd0b97582",
+      "hierarchy": "04-applied.xml",
+      "hierarchy_sha256": "593fced0511ff5d7eead56102ec932f33c50237ee98dc5d8552ca26834967b69"
+    },
+    {
+      "id": "sleep_request",
+      "passed": true,
+      "screenshot": "05-sleep-request.png",
+      "screenshot_sha256": "30b8d6c37e4fe2f12d6d1620642dde1e819f777acb112f8d45c3ad35fe81b6ba",
+      "hierarchy": "05-sleep-request.xml",
+      "hierarchy_sha256": "f4cf83f2f13af0e2ba2c791c1922d2f2ecea076e0cc42dc0b13024ffdfb0af8e"
+    },
+    {
+      "id": "sleep_apply",
+      "passed": true,
+      "screenshot": "06-sleep-applied.png",
+      "screenshot_sha256": "4a92eb007b99fb0676e2592f818b82cc699f26df8f2769c4bedb861bd6bfde63",
+      "hierarchy": "06-sleep-applied.xml",
+      "hierarchy_sha256": "1ca73c218ff6a72f7f8e11006ce116b29c63244d6cbc078538839472efc0df6f"
+    },
+    {
+      "id": "seat_move",
+      "passed": true,
+      "screenshot": "08-seat-moved.png",
+      "screenshot_sha256": "3d813a79236710d6554a6eabb6b5538367c4392918ec43f5b289bc3746f2ab70",
+      "hierarchy": "08-seat-moved.xml",
+      "hierarchy_sha256": "68479bf614354fa5d57b873eb443bdabb0d599a1ce4f2cdc6f94ea82b1ff629c"
+    },
+    {
+      "id": "command_failure",
+      "passed": true,
+      "screenshot": "11-command-failure.png",
+      "screenshot_sha256": "acfa9d49b763f18342cba11287e6c2fbcf4689030e2a5f32507c3f365d2f4ee3",
+      "hierarchy": "11-command-failure.xml",
+      "hierarchy_sha256": "48959fd0272ccaa1f7ae29ccc2eb6bd17ed3d90f86e33f3cbdadb3786c638a92"
+    },
+    {
+      "id": "driving_lock",
+      "passed": true,
+      "screenshot": "12-driving-lock.png",
+      "screenshot_sha256": "b38fc1d07320ea6683a5b42935972beb3349f61935387120bf4459d8d8aef2ef",
+      "hierarchy": "12-driving-lock.xml",
+      "hierarchy_sha256": "5cc9fa8ae45a29a8c49e5d6a09118fd5dc3ad62a9a863ef5d7743a596d692881"
+    },
+    {
+      "id": "background_resume",
+      "passed": true,
+      "screenshot": "13-background-resume.png",
+      "screenshot_sha256": "b38fc1d07320ea6683a5b42935972beb3349f61935387120bf4459d8d8aef2ef",
+      "hierarchy": "13-background-resume.xml",
+      "hierarchy_sha256": "5cc9fa8ae45a29a8c49e5d6a09118fd5dc3ad62a9a863ef5d7743a596d692881"
+    },
+    {
+      "id": "cold_relaunch",
+      "passed": true,
+      "screenshot": "14-cold-relaunch.png",
+      "screenshot_sha256": "1223101b73d7f37648a28262eb4715c31002719787f30effce0e33d041ea1909",
+      "hierarchy": "14-cold-relaunch.xml",
+      "hierarchy_sha256": "88075e8bda56915ee7d710bf3748812272d45f0d94c7ecde1c7e09cd08fbceb6"
+    },
+    {
+      "id": "ioniq5_model",
+      "passed": true,
+      "screenshot": "16-ioniq5.png",
+      "screenshot_sha256": "ce1bd7e8dfed705474118fabd939813ef8bf160a239823e9acba85fd7742d6b7",
+      "hierarchy": "16-ioniq5.xml",
+      "hierarchy_sha256": "5a00ca49dfd5dc49ae2b2a12208837cb8cd799cd265ca03ca67fa19b9f99a7fd"
+    },
+    {
+      "id": "palisade_model",
+      "passed": true,
+      "screenshot": "18-palisade.png",
+      "screenshot_sha256": "6082866b44a64963528933bf790cc10ec9f4783f9ba3c7f49ad5e93e89832c0e",
+      "hierarchy": "18-palisade.xml",
+      "hierarchy_sha256": "3d44f086487fa2c771ac383c8e51548ba4ba27c5dcef0ec30e19feb03e271def"
+    },
+    {
+      "id": "nine_seat_layout",
+      "passed": true,
+      "screenshot": "19-palisade-nine-seats.png",
+      "screenshot_sha256": "fb57a82b5cedcb52c0ab114d802324919059d501734002cbd3f75624da8ef53f",
+      "hierarchy": "19-palisade-nine-seats.xml",
+      "hierarchy_sha256": "9b67281c487d287e0f25fbfdda349d99ea3342f3ce4e96291e44e5021588e6b0"
+    }
+  ],
+  "app_logcat_fatal_or_uncaught_markers": 0,
+  "lifecycle": {
+    "home_and_resume": "HOT resume retained session and driving lock",
+    "force_stop_and_launch": "COLD relaunch reset the simulation session"
+  },
+  "video": {
+    "file": "actual-android-demo-cfr.mp4",
+    "sha256": "faaf6a81ccfe6fb2690cd0f006b0d443f8b070607eb47cd707d0f97422cdd989",
+    "probe": {
+      "programs": [],
+      "stream_groups": [],
+      "streams": [
+        {
+          "codec_name": "h264",
+          "width": 1280,
+          "height": 800,
+          "avg_frame_rate": "30/1"
+        }
+      ],
+      "format": {
+        "duration": "31.200000",
+        "size": "374332"
+      }
+    },
+    "origin": "Android screenrecord; re-encoded to constant 30 fps for playback; original retained as actual-android-demo.mp4"
+  },
+  "limitations": [
+    "No Pleos SDK, Pleos Connect Emulator, physical vehicle, or physical Android device integration was tested.",
+    "The first emulator host process crashed with Windows access violation 0xc0000005 before the sustained verification session; restart completed all listed checks. This was a host emulator failure, not a recorded Android application crash.",
+    "UIAutomator occasionally returned a null root during transitions; tooling rejects stale XML and retries.",
+    "Only one Android API level and one WebView version were exercised. Fixed landscape remains one intentional Android Lint warning."
+  ]
+}

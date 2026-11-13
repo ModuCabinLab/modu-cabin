@@ -1,0 +1,15 @@
+node_modules/
+__pycache__/
+*.pyc
+.superpowers/
+android/.gradle/
+android/local.properties
+android/**/build/
+*.keystore
+*.jks
+*.log
+qa/
+artifacts/raw/
+artifacts/
+docs/superpowers/
+tools/android/cache/
